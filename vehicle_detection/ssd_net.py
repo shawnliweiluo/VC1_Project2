@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import util.module_util as module_util
-from mobilenet import MobileNet
+import vehicle_detection.util.module_util as module_util
+from vehicle_detection.mobilenet import MobileNet
 
 
 class SSD(nn.Module):
@@ -19,14 +19,14 @@ class SSD(nn.Module):
 
         # Define the Additional feature extractor
         self.additional_feat_extractor = nn.ModuleList([
-            # Conv8_2
+            # Conv14_2
             nn.Sequential(
                 nn.Conv2d(in_channels=1024, out_channels=256, kernel_size=1),
                 nn.ReLU(),
                 nn.Conv2d(in_channels=256, out_channels=512, kernel_size=3, stride=2, padding=1),
                 nn.ReLU()
             ),
-            # Conv9_2
+            # Conv15_2
             nn.Sequential(
                 nn.Conv2d(in_channels=512, out_channels=128, kernel_size=1),
                 nn.ReLU(),
@@ -34,6 +34,20 @@ class SSD(nn.Module):
                 nn.ReLU()
             ),
             # TODO: implement two more layers.
+            # Conv16_2
+            nn.Sequential(
+                nn.Conv2d(in_channels=256, out_channels=128, kernel_size=1),
+                nn.ReLU(),
+                nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=1),
+                nn.ReLU()
+            ),
+            # Conv17_2
+            nn.Sequential(
+                nn.Conv2d(in_channels=256, out_channels=128, kernel_size=1),
+                nn.ReLU(),
+                nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=1, padding=1),
+                nn.ReLU()
+            )
         ])
 
         # Bounding box offset regressor
@@ -43,6 +57,9 @@ class SSD(nn.Module):
             nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
             # TODO: implement remaining layers.
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
         ])
 
         # Bounding box classification confidence for each label
@@ -51,9 +68,18 @@ class SSD(nn.Module):
             nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
             # TODO: implement remaining layers.
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
         ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
+        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth', map_location='cpu')
+        # filter out unnecessary keys
+        model_dict = self.base_net.state_dict()
+        pretrained_dict = {k: v for k, v in basenet_state.items() if k in model_dict}
+        # load the new state dict
+        self.base_net.load_state_dict(pretrained_dict)
 
         def init_with_xavier(m):
             if isinstance(m, nn.Conv2d):
@@ -95,16 +121,25 @@ class SSD(nn.Module):
 
         # Run the backbone network from [0 to 11, and fetch the bbox class confidence
         # as well as position and size
-        y = module_util.forward_from(self.base_net.conv_layers, 0, self.base_output_layer_indices[0]+1, input)
+        y = module_util.forward_from(self.base_net.base_net, 0, self.base_output_layer_indices[0]+1, input)
         confidence, loc = self.feature_to_bbbox(self.loc_regressor[0], self.classifier[0], y)
         confidence_list.append(confidence)
         loc_list.append(loc)
 
         # Todo: implement run the backbone network from [11 to 13] and compute the corresponding bbox loc and confidence
+        y = module_util.forward_from(self.base_net.base_net, self.base_output_layer_indices[0],
+                                     self.base_output_layer_indices[1]+1, y)
+        confidence, loc = self.feature_to_bbbox(self.loc_regressor[1], self.classifier[1], y)
         confidence_list.append(confidence)
         loc_list.append(loc)
 
         # Todo: forward the 'y' to additional layers for extracting coarse features
+        num_extra_features = len(self.additional_feat_extractor)
+        for i in range(num_extra_features):
+            y = self.additional_feat_extractor[i](y)
+            confidence, loc = self.feature_to_bbbox(self.loc_regressor[2+i], self.classifier[2+i], y)
+            confidence_list.append(confidence)
+            loc_list.append(loc)
 
         confidences = torch.cat(confidence_list, 1)
         locations = torch.cat(loc_list, 1)
@@ -112,7 +147,7 @@ class SSD(nn.Module):
         # [Debug] check the output
         assert confidence.dim() == 3  # should be (N, num_priors, num_classes)
         assert locations.dim() == 3   # should be (N, num_priors, 4)
-        assert confidence.shape[1] == locations.shape[1]
+        assert confidences.shape[1] == locations.shape[1]
         assert locations.shape[2] == 4
 
         if not self.training:
@@ -122,4 +157,5 @@ class SSD(nn.Module):
         return confidences, locations
 
 
-
+# To check out the summary of input output dims.
+# summary_layers(net, input_size=(3, 300, 300))

@@ -24,7 +24,7 @@ class MobileNet(nn.Module):
                 nn.ReLU(inplace=True),
             )
 
-        self.conv_layers = nn.Sequential(
+        self.base_net = nn.Sequential(
             conv_bn(3, 32, 2),
             conv_dw(32, 64, 1),
             conv_dw(64, 128, 2),
@@ -40,11 +40,11 @@ class MobileNet(nn.Module):
             conv_dw(512, 1024, 2),
             conv_dw(1024, 1024, 1),     # 13
         )
-        self.fc = nn.Linear(1024, num_classes)
+        # self.fc = nn.Linear(1024, num_classes)
 
     def forward(self, x):
-        x = self.conv_layers(x)
-        x = F.avg_pool2d(x, 7)
-        x = x.view(-1, 1024)
-        x = self.fc(x)
+        x = self.base_net(x)
+        # x = F.avg_pool2d(x, 7)
+        # x = x.view(-1, 1024)
+        # x = self.fc(x)
         return x

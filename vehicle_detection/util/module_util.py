@@ -1,11 +1,10 @@
 import torch
 import torch.nn as nn
 import shutil
+from torch.autograd import Variable
+from collections import OrderedDict
 
-def forward_from(module_seq: nn.Sequential,
-                 start_idx: int,
-                 end_index: int,
-                 input_x: torch.Tensor):
+def forward_from(module_seq, start_idx, end_index, input_x):
     """
     Forward the network from layer
     :param module_seq: a sequential of network layers, must be nn.Sequential
