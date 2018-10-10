@@ -3,6 +3,308 @@
   <component name="ChangeListManager">
     <list default="true" id="92e4ddb2-6c92-4663-b41c-7dc3b2fdbab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Detection.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Object Detection.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000000_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000001_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000002_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000003_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000004_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000005_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000006_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000007_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000008_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000009_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000010_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000011_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000012_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000013_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000014_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000015_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000016_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000017_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000018_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000019_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000020_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000021_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000022_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000023_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000024_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000025_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000026_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000027_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000028_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/bad-honnef/bad-honnef_000000_000029_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000000_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000001_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000002_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000003_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000004_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000005_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000006_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000007_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000008_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000009_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000010_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000011_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000012_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000013_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000014_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000015_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000016_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000017_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000018_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000019_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000020_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000021_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000022_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000023_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000024_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000025_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000026_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000027_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000028_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples/konigswinter/konigswinter_000000_000029_leftImg8bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000001_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000001_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000001_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000001_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000002_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000002_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000002_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000002_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000003_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000003_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000003_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000003_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000004_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000004_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000004_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000004_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000005_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000005_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000005_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000005_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000006_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000006_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000006_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000006_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000007_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000007_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000007_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000007_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000008_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000008_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000008_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000008_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000009_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000009_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000009_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000009_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000010_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000010_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000010_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000010_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000011_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000011_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000011_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000011_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000012_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000012_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000012_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000012_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000013_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000013_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000013_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000013_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000014_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000014_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000014_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000014_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000015_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000015_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000015_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000015_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000016_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000016_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000016_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000016_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000017_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000017_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000017_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000017_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000018_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000018_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000018_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000018_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000019_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000019_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000019_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000019_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000020_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000020_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000020_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000020_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000021_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000021_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000021_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000021_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000022_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000022_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000022_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000022_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000023_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000023_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000023_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000023_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000024_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000024_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000024_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000024_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000025_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000025_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000025_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000025_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000026_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000026_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000026_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000026_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000027_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000027_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000027_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000027_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000028_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000028_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000028_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000028_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000029_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000029_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000029_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000029_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000000_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000000_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000000_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000000_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000002_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000002_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000002_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000002_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000005_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000005_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000005_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000005_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000006_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000006_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000006_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000006_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000007_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000007_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000007_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000007_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000008_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000008_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000008_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000008_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000009_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000009_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000009_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000009_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000010_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000010_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000010_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000010_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000011_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000011_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000011_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000011_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000012_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000012_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000012_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000012_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000013_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000013_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000013_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000013_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000014_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000014_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000014_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000014_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000015_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000015_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000015_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000015_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000016_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000016_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000016_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000016_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000017_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000017_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000017_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000017_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000018_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000018_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000018_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000018_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000019_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000019_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000019_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000019_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000020_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000020_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000020_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000020_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000021_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000021_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000021_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000021_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000022_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000022_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000022_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000022_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000023_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000023_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000023_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000023_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000024_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000024_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000024_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000024_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000025_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000025_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000025_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000025_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000026_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000026_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000026_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000026_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000027_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000027_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000027_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000027_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_polygons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000029_gtCoarse_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000029_gtCoarse_instanceIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000029_gtCoarse_labelIds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscapes_samples_labels/konigswinter/konigswinter_000000_000029_gtCoarse_polygons.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,49 +316,50 @@
     <session id="-396555738">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.2" value="7" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.2" value="9" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ipynb" value="9" />
+          <entry key="ipynb" value="14" />
           <entry key="json" value="5" />
-          <entry key="png" value="6" />
-          <entry key="py" value="14" />
+          <entry key="png" value="7" />
+          <entry key="py" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IPNB" value="9" />
-          <entry key="Image" value="6" />
+          <entry key="IPNB" value="14" />
+          <entry key="Image" value="7" />
           <entry key="JSON" value="5" />
-          <entry key="Python" value="14" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4793" />
+          <entry key="py" value="5213" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="4793" />
+          <entry key="Python" value="5213" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="272">
+              <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -67,8 +370,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="71" column="38" lean-forward="true" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+            <state relative-caret-position="673">
+              <caret line="53" column="60" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -77,9 +380,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_helper.py">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/mobilenet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8764.38343/mobilenet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/ssd_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -134,6 +504,8 @@
         <option value="$PROJECT_DIR$/solver.py" />
         <option value="$PROJECT_DIR$/vehicle_detection.ipynb" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.36725/vehicle_detection.ipynb" />
+        <option value="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" />
+        <option value="$PROJECT_DIR$/Object Detection.ipynb" />
       </list>
     </option>
   </component>
@@ -159,6 +531,12 @@
               <item name="VC1_Project2" type="b2602c69:ProjectViewProjectNode" />
               <item name="VC1_Project2" type="462c0819:PsiDirectoryNode" />
               <item name="vehicle_detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VC1_Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VC1_Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="vehicle_detection" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,8 +605,24 @@
       <option name="project" value="LOCAL" />
       <updated>1539149367773</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Push">
+      <created>1539150065829</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539150065829</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -238,15 +632,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21528861" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21528861" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299532" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3299532" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3299532" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3299532" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -260,171 +654,36 @@
     <option name="LAST_COMMIT_MESSAGE" value="Push" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000000_leftImg8bit.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_color.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_polygons.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_polygons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="1687" column="33" selection-start-line="1687" selection-start-column="26" selection-end-line="1687" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_polygons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="1433" column="33" selection-start-line="1433" selection-start-column="26" selection-end-line="1433" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_polygons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="1423" column="29" selection-start-line="1423" selection-start-column="29" selection-end-line="1423" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000024_leftImg8bit.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000027_leftImg8bit.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000028_leftImg8bit.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_labelIds.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_polygons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="475" column="22" lean-forward="true" selection-start-line="475" selection-start-column="22" selection-end-line="475" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000000_leftImg8bit.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_color.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000003_gtCoarse_polygons.json" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/bad-honnef/bad-honnef_000000_000000_gtCoarse_polygons.json" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000001_gtCoarse_polygons.json" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000004_gtCoarse_polygons.json" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000024_leftImg8bit.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000027_leftImg8bit.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000028_leftImg8bit.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_labelIds.png" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples_labels/konigswinter/konigswinter_000000_000028_gtCoarse_polygons.json" />
     <entry file="file://$PROJECT_DIR$/test.ipynb" />
-    <entry file="file://$PROJECT_DIR$/util/module_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscape_datalist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bbox_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="197" column="28" selection-start-line="197" selection-start-column="28" selection-end-line="197" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bbox_loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cityscape_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssd_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobilenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/util/module_util.py" />
+    <entry file="file://$PROJECT_DIR$/cityscape_datalist.py" />
+    <entry file="file://$PROJECT_DIR$/bbox_helper.py" />
+    <entry file="file://$PROJECT_DIR$/bbox_loss.py" />
+    <entry file="file://$PROJECT_DIR$/cityscape_dataset.py" />
+    <entry file="file://$PROJECT_DIR$/ssd_net.py" />
+    <entry file="file://$PROJECT_DIR$/mobilenet.py" />
+    <entry file="file://$PROJECT_DIR$/solver.py" />
     <entry file="file://$PROJECT_DIR$/../VC1_Project1/FacialLandmark.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="777">
           <caret line="221" column="72" selection-start-line="221" selection-start-column="72" selection-end-line="221" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.15847/vehicle_detection.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.29685/vehicle_detection.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.31181/._vehicle_detection.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.15847/vehicle_detection.ipynb" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.29685/vehicle_detection.ipynb" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.31181/._vehicle_detection.ipynb" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa13420.32109/__MACOSX/._vehicle_detection.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -432,26 +691,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.36725/vehicle_detection.ipynb">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.36725/vehicle_detection.ipynb" />
+    <entry file="file://$PROJECT_DIR$/cityscapes_samples/konigswinter/konigswinter_000000_000005_leftImg8bit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://E:/Object Detection.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="71" column="38" lean-forward="true" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="306">
+          <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -467,11 +729,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="53" column="60" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/ssd_net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8764.38343/mobilenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/mobilenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
