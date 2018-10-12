@@ -97,7 +97,6 @@ def iou(gt_bboxes, prior_bboxes):
     M = prior_bboxes.shape[0]
     prior = torch.ones((N, M, 4)) * prior_bboxes.unsqueeze(0)
     gt = gt_bboxes.unsqueeze(1)
-
     # Compute the top left and bottom right coordinates for intersection
     bottom_right = torch.min(gt[..., 2:], prior[..., 2:])
     top_left = torch.max(gt[..., :2], prior[..., :2])
@@ -172,7 +171,6 @@ def match_priors(prior_bboxes, gt_bboxes, gt_labels, iou_threshold=0.5):
     matched_boxes[best_prior_idx] = corner2center(gt_bboxes[best_gt_idx])
 
     # Convert the ground truth bounding boxes to ssd locations.
-    # if len(matched_boxes[best_prior_idx] > 0):
     matched_boxes[best_prior_idx] = bbox2loc(matched_boxes[best_prior_idx],
                                              prior_bboxes[best_prior_idx])
 
@@ -211,7 +209,7 @@ def nms_bbox(bbox_loc, bbox_confid_scores, overlap_threshold=0.5, prob_threshold
 
     # Todo: implement nms for filtering out the unnecessary bounding boxes
     num_classes = bbox_confid_scores.shape[1]
-    for class_idx in range(0, num_classes):
+    for class_idx in range(1, num_classes):
         # Select only boxes with a high confidence score
         high_confid = bbox_confid_scores[:, class_idx] > prob_threshold
         remaining_boxes = bbox_loc[high_confid].clone()
@@ -224,10 +222,10 @@ def nms_bbox(bbox_loc, bbox_confid_scores, overlap_threshold=0.5, prob_threshold
         # Discard bounding boxes with overlap of at least overlap_threshold
         while len(remaining_boxes) > 0:
             # Take the bbox and it's confidence score
-            sel_bbox.append((remaining_boxes[-1], remaining_confid[-1]))
+            sel_bbox.append((remaining_boxes[-1], class_idx))
             # Compute Jaccard similarity
             jaccard_sim = iou(remaining_boxes[-1].unsqueeze(0), remaining_boxes)
-            # Discard the bounding boxes with too much overalp
+            # Discard the bounding boxes with too much overlap
             remaining_boxes = remaining_boxes[(jaccard_sim < overlap_threshold).squeeze()]
             remaining_confid = remaining_confid[(jaccard_sim < overlap_threshold).squeeze()]
 
@@ -285,8 +283,9 @@ def bbox2loc(bbox, priors, center_var=0.1, size_var=0.2):
     b_center = bbox[..., :2]
     b_size = bbox[..., 2:]
 
-    return torch.cat([1 / center_var * ((b_center - p_center) / p_size),
+    c =  torch.cat([1 / center_var * ((b_center - p_center) / p_size),
                       torch.log(b_size / p_size) / size_var], dim=-1)
+    return c
 
 
 def center2corner(center):

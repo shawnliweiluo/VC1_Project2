@@ -1,9 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import vehicle_detection.util.module_util as module_util
-from vehicle_detection.mobilenet import MobileNet
-
+import util.module_util as module_util
+from mobilenet import MobileNet
 
 class SSD(nn.Module):
     
@@ -15,37 +14,45 @@ class SSD(nn.Module):
         self.base_net = MobileNet(num_classes)
 
         # The feature map will extracted from layer[11] and layer[13] in (base_net)
-        self.base_output_layer_indices = (11, 13)
+        self.base_output_layer_indices = (6, 12)
 
         # Define the Additional feature extractor
         self.additional_feat_extractor = nn.ModuleList([
             # Conv14_2
             nn.Sequential(
                 nn.Conv2d(in_channels=1024, out_channels=256, kernel_size=1),
+                nn.BatchNorm2d(256),
                 nn.ReLU(),
                 nn.Conv2d(in_channels=256, out_channels=512, kernel_size=3, stride=2, padding=1),
+                nn.BatchNorm2d(512),
                 nn.ReLU()
             ),
             # Conv15_2
             nn.Sequential(
                 nn.Conv2d(in_channels=512, out_channels=128, kernel_size=1),
+                nn.BatchNorm2d(128),
                 nn.ReLU(),
                 nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=2, padding=1),
+                nn.BatchNorm2d(256),
                 nn.ReLU()
             ),
             # TODO: implement two more layers.
             # Conv16_2
             nn.Sequential(
                 nn.Conv2d(in_channels=256, out_channels=128, kernel_size=1),
+                nn.BatchNorm2d(128),
                 nn.ReLU(),
                 nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=1),
+                nn.BatchNorm2d(256),
                 nn.ReLU()
             ),
             # Conv17_2
             nn.Sequential(
                 nn.Conv2d(in_channels=256, out_channels=128, kernel_size=1),
+                nn.BatchNorm2d(128),
                 nn.ReLU(),
                 nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=1, padding=1),
+                nn.BatchNorm2d(256),
                 nn.ReLU()
             )
         ])
@@ -74,19 +81,19 @@ class SSD(nn.Module):
         ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
-        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth', map_location='cpu')
+        basenet_state = torch.load('pretrained/mobienetv2.pth')
         # filter out unnecessary keys
         model_dict = self.base_net.state_dict()
         pretrained_dict = {k: v for k, v in basenet_state.items() if k in model_dict}
         # load the new state dict
         self.base_net.load_state_dict(pretrained_dict)
 
-        def init_with_xavier(m):
+        def init_with_kaiming(m):
             if isinstance(m, nn.Conv2d):
-                nn.init.xavier_uniform_(m.weight)
-        self.loc_regressor.apply(init_with_xavier)
-        self.classifier.apply(init_with_xavier)
-        self.additional_feat_extractor.apply(init_with_xavier)
+                nn.init.kaiming_normal_(m.weight)
+        self.loc_regressor.apply(init_with_kaiming)
+        self.classifier.apply(init_with_kaiming)
+        self.additional_feat_extractor.apply(init_with_kaiming)
 
     def feature_to_bbbox(self, loc_regress_layer, confidence_layer, input_feature):
         """
@@ -127,7 +134,7 @@ class SSD(nn.Module):
         loc_list.append(loc)
 
         # Todo: implement run the backbone network from [11 to 13] and compute the corresponding bbox loc and confidence
-        y = module_util.forward_from(self.base_net.base_net, self.base_output_layer_indices[0],
+        y = module_util.forward_from(self.base_net.base_net, self.base_output_layer_indices[0]+1,
                                      self.base_output_layer_indices[1]+1, y)
         confidence, loc = self.feature_to_bbbox(self.loc_regressor[1], self.classifier[1], y)
         confidence_list.append(confidence)
@@ -152,8 +159,7 @@ class SSD(nn.Module):
 
         if not self.training:
             # If in testing/evaluating mode, normalize the output with Softmax
-            confidences = F.softmax(confidences, dim=1)
-
+            confidences = F.softmax(confidences, dim=2)
         return confidences, locations
 
 

@@ -2,6 +2,7 @@ import numpy as np
 import json
 import os
 import random
+import torch
 
 class CityScapeDatalist():
     '''
@@ -66,7 +67,7 @@ class CityScapeDatalist():
 
                 # For each image add all the accepted labels and their corresponding bounding boxes.
                 self.data_list.append({"img_path": img_path, "labels": np.asarray(labels),
-                                       'bounding_boxes': np.asarray(bounding_boxes, dtype=self.dtype)})
+                                       'bounding_boxes':np.asarray(bounding_boxes, dtype=self.dtype)})
 
     def split_data(self, train_portion=0.7, valid_portion=0.1):
         random.shuffle(self.data_list)

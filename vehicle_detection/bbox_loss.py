@@ -2,7 +2,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 
-
 def hard_negative_mining(predicted_prob, gt_label, neg_pos_ratio=3.0):
     """
     The training sample has much more negative samples, the hard negative mining produces balanced
@@ -31,8 +30,6 @@ class MultiboxLoss(nn.Module):
 
     def __init__(self, iou_threshold=0.5, neg_pos_ratio=3.0):
         super(MultiboxLoss, self).__init__()
-        # self.bbox_center_var, self.bbox_size_var = bbox_pre_var[:2], bbox_pre_var[2:]
-        self.iou_threshold = iou_threshold
         self.neg_pos_ratio = neg_pos_ratio
         self.neg_label_idx = 0
 
@@ -51,35 +48,31 @@ class MultiboxLoss(nn.Module):
             neg_class_prob = -F.log_softmax(confidence, dim=2)[:, :, self.neg_label_idx]      # select neg. class prob.
             pos_flag, neg_flag = hard_negative_mining(neg_class_prob, gt_class_labels, neg_pos_ratio=self.neg_pos_ratio)
             sel_flag = pos_flag | neg_flag
-            num_pos = pos_flag.long().sum(dim=1, keepdim=True)
-
-        # Find cases where there are no positive examples and temporarily modify that.
-        # This helps us not divide by zero
-        # no_positive = (num_pos == 0)
-        # num_pos[no_positive] = 1
+            num_pos = pos_flag.sum(dim=1, keepdim=True).float().sum()
 
         # Loss for the classification
         num_classes = confidence.shape[2]
         sel_conf = confidence[sel_flag]
-        print(sel_conf.shape)
-        print(gt_class_labels[sel_flag].shape)
-        conf_loss = F.cross_entropy(sel_conf.reshape(-1, num_classes),
-                                    gt_class_labels[sel_flag]) / num_pos
-        # Adjust conf_loss for cases where there were no positive examples
-        # Set the loss to zero for these cases
-        # conf_loss[no_positive] = 0
+        # print("Label Prediction:")
+        # print(sel_conf.reshape(-1, num_classes))
+        # print("Labe Ground Truth")
+        # print(gt_class_labels[sel_flag])
+        conf_loss = F.cross_entropy(sel_conf.view(-1, num_classes),
+                                    gt_class_labels[sel_flag],
+                                    reduction='sum') / num_pos
 
         # Loss for the bounding box prediction
         # TODO: implementation on bounding box regression
         pos_idx = pos_flag.unsqueeze(2).expand_as(pred_loc)
-        loc_huber_loss = F.smooth_l1_loss(pred_loc[pos_idx].reshape(-1, 4),
-                                          gt_bbox_loc[pos_idx].reshape(-1, 4)) / num_pos
-        # Adjust conf_loss for cases where there were no positive examples
-        # Set the loss to zero for these cases
-        # loc_huber_loss[no_positive] = 0
+        # print("Location Prediction:")
+        # print(pred_loc[pos_idx].reshape(-1, 4))
+        # print("Location Ground Truth")
+        # print(gt_bbox_loc[pos_idx].reshape(-1, 4))
+        loc_huber_loss = F.smooth_l1_loss(pred_loc[pos_idx].view(-1, 4),
+                                          gt_bbox_loc[pos_idx].view(-1, 4),
+                                          reduction='sum') / num_pos
 
         # Average the loss over training data
-        conf_loss = torch.mean(conf_loss)
-        loc_huber_loss = torch.mean(loc_huber_loss)
+        print("Individual loss: ({},{})".format(conf_loss, loc_huber_loss))
 
         return conf_loss, loc_huber_loss

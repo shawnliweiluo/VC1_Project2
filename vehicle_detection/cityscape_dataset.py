@@ -3,8 +3,7 @@ import torch.nn
 from torch.utils.data import Dataset
 from PIL import Image
 
-from vehicle_detection.bbox_helper import generate_prior_bboxes, match_priors
-
+from bbox_helper import generate_prior_bboxes, match_priors
 
 class CityScapeDataset(Dataset):
 
@@ -26,8 +25,8 @@ class CityScapeDataset(Dataset):
         img = img.resize(self.input_dim)
         w_ratio = self.input_dim[0] / float(w)
         h_ratio = self.input_dim[1] / float(h)
-        bbox[:, 0] *= w_ratio
-        bbox[:, 1] *= h_ratio
+        bbox[:, [0, 2]] *= w_ratio
+        bbox[:, [1, 3]] *= h_ratio
         return img, bbox
 
     def get_prior_bbox(self):
@@ -59,13 +58,14 @@ class CityScapeDataset(Dataset):
         img = (img - self.mean) / self.std
 
         # Normalize the bounding box position value from 0 to 1
-        sample_bboxes[:, 0] /= self.input_dim[0]
-        sample_bboxes[:, 1] /= self.input_dim[1]
+        sample_bboxes[:, [0,2]] /= self.input_dim[0]
+        sample_bboxes[:, [1,3]] /= self.input_dim[1]
 
         # Take the labels for the image
         sample_labels = self.dataset_list[idx]['labels']
 
         # Convert image, bbox and label to tensor
+        # torch.set_default_tensor_type('torch.cuda.FloatTensor')
         img = torch.from_numpy(img)
         sample_bboxes = torch.from_numpy(sample_bboxes)
         sample_labels = torch.from_numpy(sample_labels)
