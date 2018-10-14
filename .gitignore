@@ -1,6 +1,2 @@
-pretrained/*
 cityscapes_samples/*
 cityscapes_samples_labels/*
-util/*
-lab_session_3_ssd_det.pptx
-.idea/*

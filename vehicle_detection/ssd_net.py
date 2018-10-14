@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import util.module_util as module_util
-from mobilenet import MobileNet
+import vehicle_detection.util.module_util as module_util
+from vehicle_detection.mobilenet import MobileNet
 
 class SSD(nn.Module):
     
@@ -14,7 +14,7 @@ class SSD(nn.Module):
         self.base_net = MobileNet(num_classes)
 
         # The feature map will extracted from layer[11] and layer[13] in (base_net)
-        self.base_output_layer_indices = (6, 12)
+        self.base_output_layer_indices = (11, 13)
 
         # Define the Additional feature extractor
         self.additional_feat_extractor = nn.ModuleList([
@@ -81,7 +81,7 @@ class SSD(nn.Module):
         ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
-        basenet_state = torch.load('pretrained/mobienetv2.pth')
+        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth')
         # filter out unnecessary keys
         model_dict = self.base_net.state_dict()
         pretrained_dict = {k: v for k, v in basenet_state.items() if k in model_dict}

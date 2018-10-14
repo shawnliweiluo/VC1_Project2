@@ -29,6 +29,7 @@ class CityScapeDatalist():
 
     def prepare_data_list(self):
         self.data_list = []
+        counts = 0
         # Iterate through the directories and subdirectories to make the data list
         for cur_dir, sub_dirs, files in os.walk(self.base_img_dir):
             # Proceed once you have reached the leaf of the tree that is there
@@ -36,6 +37,10 @@ class CityScapeDatalist():
             if len(sub_dirs) != 0:
                 continue
             for img_file in files:
+                counts += 1
+                if counts % 1000 == 0:
+                    print("{} images processed".format(counts))
+
                 tokens = img_file.split('_')
                 # Ensure the image name has consistent format
                 assert len(tokens) == 4

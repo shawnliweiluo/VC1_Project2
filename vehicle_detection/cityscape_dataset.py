@@ -3,14 +3,18 @@ import torch.nn
 from torch.utils.data import Dataset
 from PIL import Image
 
-from bbox_helper import generate_prior_bboxes, match_priors
+from vehicle_detection.bbox_helper import generate_prior_bboxes, match_priors
+from vehicle_detection.util.augmentations import *
+
 
 class CityScapeDataset(Dataset):
 
-    def __init__(self, dataset_list, input_dim=(300, 300), dtype=np.float32):
+    def __init__(self, dataset_list, input_dim=(300, 300), dtype=np.float32,
+                 mode='train'):
         self.dataset_list = dataset_list
         self.input_dim = input_dim
         self.dtype=dtype
+        self.mode=mode
 
         # TODO: implement prior bounding box
         self.prior_bboxes = generate_prior_bboxes()
@@ -47,8 +51,17 @@ class CityScapeDataset(Dataset):
         img_path = self.dataset_list[idx]['img_path']
         img = Image.open(img_path)
         sample_bboxes = self.dataset_list[idx]['bounding_boxes']
+        # Take the labels for the image
+        sample_labels = self.dataset_list[idx]['labels']
 
-        # Resize the image and it's bounding boxes
+        if self.mode == 'train':
+            # Data Augmentation
+            # First apply random cropping.
+            img, sample_bboxes, sample_labels = RandomCrop(img, sample_bboxes, sample_labels)
+
+            # TODO:: Alter the brightness randomly
+
+        # Resize the image and it's bounding boxes to a fixed size
         img, sample_bboxes = self.resize(img, sample_bboxes)
 
         # Convert image to array and move the channels to first dim
@@ -61,14 +74,10 @@ class CityScapeDataset(Dataset):
         sample_bboxes[:, [0,2]] /= self.input_dim[0]
         sample_bboxes[:, [1,3]] /= self.input_dim[1]
 
-        # Take the labels for the image
-        sample_labels = self.dataset_list[idx]['labels']
-
         # Convert image, bbox and label to tensor
-        # torch.set_default_tensor_type('torch.cuda.FloatTensor')
         img = torch.from_numpy(img)
         sample_bboxes = torch.from_numpy(sample_bboxes)
-        sample_labels = torch.from_numpy(sample_labels)
+        sample_labels = torch.from_numpy(sample_labels).long()
 
         # Do the matching prior and generate ground-truth labels as well as the boxes
         # The bbox_tensor will be in ssd location format.

@@ -53,10 +53,6 @@ class MultiboxLoss(nn.Module):
         # Loss for the classification
         num_classes = confidence.shape[2]
         sel_conf = confidence[sel_flag]
-        # print("Label Prediction:")
-        # print(sel_conf.reshape(-1, num_classes))
-        # print("Labe Ground Truth")
-        # print(gt_class_labels[sel_flag])
         conf_loss = F.cross_entropy(sel_conf.view(-1, num_classes),
                                     gt_class_labels[sel_flag],
                                     reduction='sum') / num_pos
@@ -64,15 +60,8 @@ class MultiboxLoss(nn.Module):
         # Loss for the bounding box prediction
         # TODO: implementation on bounding box regression
         pos_idx = pos_flag.unsqueeze(2).expand_as(pred_loc)
-        # print("Location Prediction:")
-        # print(pred_loc[pos_idx].reshape(-1, 4))
-        # print("Location Ground Truth")
-        # print(gt_bbox_loc[pos_idx].reshape(-1, 4))
         loc_huber_loss = F.smooth_l1_loss(pred_loc[pos_idx].view(-1, 4),
                                           gt_bbox_loc[pos_idx].view(-1, 4),
                                           reduction='sum') / num_pos
-
-        # Average the loss over training data
-        print("Individual loss: ({},{})".format(conf_loss, loc_huber_loss))
 
         return conf_loss, loc_huber_loss
