@@ -87,16 +87,19 @@ class Solver:
                 optimizer.step()
 
                 if ((batch_idx % print_every) == 0) and (batch_idx != 0):
-                    print("Epoch %d, iteration %d : total loss is %.7f, conf loss is %0.7f, locs loss is %0.7f" % (i, batch_idx,
+                    print("Epoch %d, lr is %.7f, iteration %d : total loss is %.7f, conf loss is %0.7f, locs loss is %0.7f" % (i,
+                                                                                                                   optimizer.param_groups[0]['lr'],
+                                                                                                                   batch_idx,
                                                                                                                    total_loss.item(),
                                                                                                                    conf_loss.item(),
                                                                                                                    loc_huber_loss.item()))
                     accuracy, confidences, locs, valid_class_loss, valid_bbox_loss = self.evaluate_model(model, loss_criteria, self.valid_loader)
                     valid_class_losses += valid_class_loss
                     valid_bbox_losses += valid_bbox_loss
-                    print("Validation: Accuracy = {}, total loss = {}, conf los = {}, locs loss = {}".format(accuracy,
-                                                                                                             valid_class_loss + valid_bbox_loss,
-                                                                                                             valid_class_loss,
-                                                                                                             valid_bbox_loss))
+                    print("Validation: Accuracy = {}, total loss = {}, conf loss = {}, locs loss = {}".format(accuracy, valid_class_loss[-1]+valid_bbox_losses[-1],
+                                                                                                              valid_class_loss[-1],
+                                                                                                              valid_bbox_loss[-1]))
+            net_state = model.state_dict()
+            torch.save(net_state, 'vehicle_detection/ssd_net')
             print('--------')
         return train_class_losses, train_bbox_losses, valid_class_losses, valid_bbox_losses

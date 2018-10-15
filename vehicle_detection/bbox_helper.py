@@ -25,6 +25,9 @@ def generate_prior_bboxes(prior_layer_cfg=None, smin=0.2, smax=0.9):
     """
     if prior_layer_cfg is None:
         prior_layer_cfg = [
+            # {'layer_name': 'Conv1', 'feature_dim_hw': (150, 150), 'aspect_ratio': (1.0, 1 / 2, 1 / 3, 2.0, 3.0, 1.0)},
+            # {'layer_name': 'Conv3', 'feature_dim_hw': (75, 75), 'aspect_ratio': (1.0, 1 / 2, 1 / 3, 2.0, 3.0, 1.0)},
+            {'layer_name': 'Conv5', 'feature_dim_hw': (38, 38), 'aspect_ratio': (1.0, 1 / 2, 1 / 3, 2.0, 3.0, 1.0)},
             {'layer_name': 'Conv11', 'feature_dim_hw': (19, 19), 'aspect_ratio': (1.0, 1 / 2, 1 / 3, 2.0, 3.0, 1.0)},
             {'layer_name': 'Conv13', 'feature_dim_hw': (10, 10), 'aspect_ratio': (1.0, 1 / 2, 1 / 3, 2.0, 3.0, 1.0)},
             # TODO: define your feature map settings

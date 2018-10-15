@@ -4,8 +4,9 @@ import torch.nn.functional as F
 import vehicle_detection.util.module_util as module_util
 from vehicle_detection.mobilenet import MobileNet
 
+
 class SSD(nn.Module):
-    
+
     def __init__(self, num_classes):
         super(SSD, self).__init__()
         self.num_classes = num_classes
@@ -14,7 +15,7 @@ class SSD(nn.Module):
         self.base_net = MobileNet(num_classes)
 
         # The feature map will extracted from layer[11] and layer[13] in (base_net)
-        self.base_output_layer_indices = (11, 13)
+        self.base_output_layer_indices = (5, 11, 13)
 
         # Define the Additional feature extractor
         self.additional_feat_extractor = nn.ModuleList([
@@ -58,8 +59,11 @@ class SSD(nn.Module):
         ])
 
         # Bounding box offset regressor
-        num_prior_bbox = 6                                                               # num of prior bounding boxes
+        num_prior_bbox = 6  # num of prior bounding boxes
         self.loc_regressor = nn.ModuleList([
+            # nn.Conv2d(in_channels=64, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
+            # nn.Conv2d(in_channels=128, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
@@ -71,6 +75,9 @@ class SSD(nn.Module):
 
         # Bounding box classification confidence for each label
         self.classifier = nn.ModuleList([
+            # nn.Conv2d(in_channels=64, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
+            # nn.Conv2d(in_channels=128, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
             nn.Conv2d(in_channels=512, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
@@ -81,7 +88,7 @@ class SSD(nn.Module):
         ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
-        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth')
+        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth', map_location='cpu')
         # filter out unnecessary keys
         model_dict = self.base_net.state_dict()
         pretrained_dict = {k: v for k, v in basenet_state.items() if k in model_dict}
@@ -91,6 +98,7 @@ class SSD(nn.Module):
         def init_with_kaiming(m):
             if isinstance(m, nn.Conv2d):
                 nn.init.kaiming_normal_(m.weight)
+
         self.loc_regressor.apply(init_with_kaiming)
         self.classifier.apply(init_with_kaiming)
         self.additional_feat_extractor.apply(init_with_kaiming)
@@ -111,7 +119,7 @@ class SSD(nn.Module):
         #    where H*W*num_prior_bbox = num_priors
         conf = conf.permute(0, 2, 3, 1).contiguous()
         num_batch = conf.shape[0]
-        c_channels = int(conf.shape[1]*conf.shape[2]*conf.shape[3] / self.num_classes)
+        c_channels = int(conf.shape[1] * conf.shape[2] * conf.shape[3] / self.num_classes)
         conf = conf.view(num_batch, c_channels, self.num_classes)
 
         # Bounding Box loc and size post-processing
@@ -128,23 +136,20 @@ class SSD(nn.Module):
 
         # Run the backbone network from [0 to 11, and fetch the bbox class confidence
         # as well as position and size
-        y = module_util.forward_from(self.base_net.base_net, 0, self.base_output_layer_indices[0]+1, input)
-        confidence, loc = self.feature_to_bbbox(self.loc_regressor[0], self.classifier[0], y)
-        confidence_list.append(confidence)
-        loc_list.append(loc)
-
-        # Todo: implement run the backbone network from [11 to 13] and compute the corresponding bbox loc and confidence
-        y = module_util.forward_from(self.base_net.base_net, self.base_output_layer_indices[0]+1,
-                                     self.base_output_layer_indices[1]+1, y)
-        confidence, loc = self.feature_to_bbbox(self.loc_regressor[1], self.classifier[1], y)
-        confidence_list.append(confidence)
-        loc_list.append(loc)
+        start_layer = 0
+        for j in range(len(self.base_output_layer_indices)):
+            input = module_util.forward_from(self.base_net.base_net, start_layer,
+                                             self.base_output_layer_indices[j]+1, input)
+            confidence, loc = self.feature_to_bbbox(self.loc_regressor[j], self.classifier[j], input)
+            confidence_list.append(confidence)
+            loc_list.append(loc)
+            start_layer = self.base_output_layer_indices[j]+1
 
         # Todo: forward the 'y' to additional layers for extracting coarse features
         num_extra_features = len(self.additional_feat_extractor)
         for i in range(num_extra_features):
-            y = self.additional_feat_extractor[i](y)
-            confidence, loc = self.feature_to_bbbox(self.loc_regressor[2+i], self.classifier[2+i], y)
+            input = self.additional_feat_extractor[i](input)
+            confidence, loc = self.feature_to_bbbox(self.loc_regressor[j + 1 + i], self.classifier[j + 1 + i], input)
             confidence_list.append(confidence)
             loc_list.append(loc)
 
@@ -153,7 +158,7 @@ class SSD(nn.Module):
 
         # [Debug] check the output
         assert confidence.dim() == 3  # should be (N, num_priors, num_classes)
-        assert locations.dim() == 3   # should be (N, num_priors, 4)
+        assert locations.dim() == 3  # should be (N, num_priors, 4)
         assert confidences.shape[1] == locations.shape[1]
         assert locations.shape[2] == 4
 
@@ -162,6 +167,3 @@ class SSD(nn.Module):
             confidences = F.softmax(confidences, dim=2)
         return confidences, locations
 
-
-# To check out the summary of input output dims.
-# summary_layers(net, input_size=(3, 300, 300))

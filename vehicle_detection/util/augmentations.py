@@ -28,8 +28,33 @@ def iou(gt, prior):
 
     return jaccard_sim
 
+
+def expansion(img, sample_bboxes, sample_labels, mean_img):
+
+    if np.random.randint(2):
+        return img, sample_bboxes, sample_labels
+
+    h, w, c = img.shape
+    exp_ratio = np.random.uniform(1, 4)
+    x = np.random.uniform(0, w * exp_ratio - w)
+    y = np.random.uniform(0, h * exp_ratio - h)
+
+    expand_img = np.zeros((int(h * exp_ratio),
+                           int(w * exp_ratio), c),
+                          dtype=img.dtype)
+    expand_img[:, :, :] = mean_img
+    expand_img[int(y):int(y + h), int(x):int(x + w)] = img
+    img = expand_img
+
+    sample_bboxes = sample_bboxes.copy()
+    sample_bboxes[:, :2] += (int(x), int(y))
+    sample_bboxes[:, 2:] += (int(x), int(y))
+
+    return img, sample_bboxes, sample_labels
+
+
 # This will randomly crop the input image
-def RandomCrop(img, sample_bboxes, sample_labels, max_itr=50):
+def random_crop(img, sample_bboxes, sample_labels, max_itr=50):
     while True:
         # Choose min jaccard similarity randomly
         sim_thresholds = np.array([None, 0.1, 0.3, 0.5, 0.7, 0.9])
@@ -37,7 +62,7 @@ def RandomCrop(img, sample_bboxes, sample_labels, max_itr=50):
         if min_sim is None:
             return img, sample_bboxes, sample_labels
 
-        w, h = img.size
+        h, w, _ = img.shape
         for i in range(max_itr):
             # choose width and height for the crop
             w_crop = np.random.uniform(0.3 * w, w)
@@ -56,7 +81,7 @@ def RandomCrop(img, sample_bboxes, sample_labels, max_itr=50):
                 continue
 
             # Crop the image
-            new_img = img.crop(crop_coord)
+            new_img = img[int(y):int(y+h_crop), int(x):int(x+w_crop), :]
 
             # Compute the center of the objects
             centers = (sample_bboxes[:, :2] + sample_bboxes[:, 2:]) / 2

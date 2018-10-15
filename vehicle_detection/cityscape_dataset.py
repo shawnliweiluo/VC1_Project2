@@ -25,6 +25,7 @@ class CityScapeDataset(Dataset):
         self.std = 128.0
 
     def resize(self, img, bbox):
+        img = Image.fromarray(img.astype('uint8'))
         w, h = img.size
         img = img.resize(self.input_dim)
         w_ratio = self.input_dim[0] / float(w)
@@ -49,17 +50,19 @@ class CityScapeDataset(Dataset):
         # TODO: implement data loading
         # Load image the image and it's bounding boxes
         img_path = self.dataset_list[idx]['img_path']
-        img = Image.open(img_path)
+        img = np.asarray(Image.open(img_path), dtype=self.dtype)
         sample_bboxes = self.dataset_list[idx]['bounding_boxes']
         # Take the labels for the image
         sample_labels = self.dataset_list[idx]['labels']
 
         if self.mode == 'train':
             # Data Augmentation
-            # First apply random cropping.
-            img, sample_bboxes, sample_labels = RandomCrop(img, sample_bboxes, sample_labels)
-
+            # First apply expansion.
+            img, sample_bboxes, sample_labels = expansion(img, sample_bboxes, sample_labels, mean_img=self.mean.reshape(1,1,3))
+            # Second apply random cropping.
+            img, sample_bboxes, sample_labels = random_crop(img, sample_bboxes, sample_labels)
             # TODO:: Alter the brightness randomly
+
 
         # Resize the image and it's bounding boxes to a fixed size
         img, sample_bboxes = self.resize(img, sample_bboxes)
