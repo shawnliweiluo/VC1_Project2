@@ -99,6 +99,7 @@ class Solver:
                     print("Validation: Accuracy = {}, total loss = {}, conf loss = {}, locs loss = {}".format(accuracy, valid_class_loss[-1]+valid_bbox_losses[-1],
                                                                                                               valid_class_loss[-1],
                                                                                                               valid_bbox_loss[-1]))
+
             net_state = model.state_dict()
             torch.save(net_state, 'vehicle_detection/ssd_net')
             print('--------')

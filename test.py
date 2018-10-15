@@ -37,7 +37,7 @@ label_dict = {
     "traffic light": 11
 }
 
-improve_model = False
+improve_model = True
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
                                                                         optimizer,
                                                                         loss_function,
                                                                         num_epochs=num_epochs,
-                                                                        print_every=20)
+                                                                        print_every=245)
         train_class_losses += tclass_loss
         train_bbox_losses += tbbox_loss
         valid_class_losses += vclass_loss
