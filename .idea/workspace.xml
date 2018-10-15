@@ -4,12 +4,7 @@
     <list default="true" id="92e4ddb2-6c92-4663-b41c-7dc3b2fdbab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Detection.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Object Detection.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/preprocess.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/ssd_net" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/ssd_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/ssd_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,12 +68,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1859" />
+          <entry key="py" value="1867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1859" />
+          <entry key="Python" value="1867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -166,11 +161,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="8" />
+              <selected id="5" />
             </state>
           </provider>
         </entry>
@@ -187,11 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+            <state relative-caret-position="799">
+              <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -260,11 +255,11 @@
         <option value="$PROJECT_DIR$/vehicle_detection/preprocess.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/solver.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" />
-        <option value="$PROJECT_DIR$/Object Detection.ipynb" />
         <option value="$PROJECT_DIR$/vehicle_detection/test.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/ssd_net.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Object Detection.ipynb" />
       </list>
     </option>
   </component>
@@ -513,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539579789777</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Push">
+      <created>1539585070665</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539585070665</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -731,17 +733,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="3" />
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+    <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="5" />
         </state>
       </provider>
     </entry>

@@ -70,7 +70,7 @@ train_class_losses = []
 
 # Training the model
 lr = 1e-3
-for num_epochs in [5, 20, 20, 10, 5]:
+for num_epochs in [15, 20, 20, 10, 5]:
     optimizer.param_groups[0]['lr'] = lr
     tclass_loss, tbbox_loss, vclass_loss, vbbox_loss = solver.train(ssd_net,
                                                                     optimizer, 
