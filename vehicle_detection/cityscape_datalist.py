@@ -74,7 +74,7 @@ class CityScapeDatalist():
                 self.data_list.append({"img_path": img_path, "labels": np.asarray(labels),
                                        'bounding_boxes':np.asarray(bounding_boxes, dtype=self.dtype)})
 
-    def split_data(self, train_portion=0.7, valid_portion=0.1):
+    def split_data(self, train_portion=0.8, valid_portion=0.1):
         random.shuffle(self.data_list)
         total_data_size = len(self.data_list)
 

@@ -191,7 +191,7 @@ def match_priors(prior_bboxes, gt_bboxes, gt_labels, iou_threshold=0.5):
 
 ''' NMS ----------------------------------------------------------------------------------------------------------------
 '''
-def nms_bbox(bbox_loc, bbox_confid_scores, overlap_threshold=0.5, prob_threshold=0.6):
+def nms_bbox(bbox_loc, bbox_confid_scores, overlap_threshold=0.5, prob_threshold=0.25):
     """
     Non-maximum suppression for computing best overlapping bounding box for a object
     Use this function when testing the samples.

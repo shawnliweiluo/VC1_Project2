@@ -88,7 +88,7 @@ class SSD(nn.Module):
         ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
-        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth', map_location='cpu')
+        basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth')
         # filter out unnecessary keys
         model_dict = self.base_net.state_dict()
         pretrained_dict = {k: v for k, v in basenet_state.items() if k in model_dict}
