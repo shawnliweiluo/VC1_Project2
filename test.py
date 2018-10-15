@@ -39,6 +39,7 @@ label_dict = {
 
 improve_model = False
 
+
 def main():
     # Load the train and validation data lists
     train_list = np.load('train.npy')
@@ -68,6 +69,8 @@ def main():
 
     train_bbox_losses = []
     train_class_losses = []
+    valid_bbox_losses = []
+    valid_class_losses = []
 
     # Training the model
     lr = 1e-3
@@ -77,10 +80,20 @@ def main():
                                                                         optimizer,
                                                                         loss_function,
                                                                         num_epochs=num_epochs,
-                                                                        print_every=200)
+                                                                        print_every=20)
         train_class_losses += tclass_loss
         train_bbox_losses += tbbox_loss
+        valid_class_losses += vclass_loss
+        valid_bbox_losses += vbbox_loss
+
+        np.save('train_class_losses', train_class_losses)
+        np.save('train_bbox_losses', train_bbox_losses)
+        np.save('valid_class_losses', valid_class_losses)
+        np.save('valid_bbox_losses', valid_bbox_losses)
+
         lr *= 1e-1
+
+
 
 
 if __name__ == "__main__":

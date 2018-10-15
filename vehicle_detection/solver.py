@@ -74,8 +74,8 @@ class Solver:
                 # Compute the loss and save it.
                 conf_loss, loc_huber_loss = loss_criteria.forward(confidences, locs, gt_labels, gt_locs)
                 total_loss = conf_loss + loc_huber_loss
-                train_class_losses.append(conf_loss)
-                train_bbox_losses.append(loc_huber_loss)
+                train_class_losses.append(conf_loss.item())
+                train_bbox_losses.append(loc_huber_loss.item())
 
                 # Zero out the gradients before optimization
                 optimizer.zero_grad()
