@@ -5,7 +5,7 @@ from torch.autograd import Variable
 import numpy as np
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
-from vehicle_detection.bbox_helper import generate_prior_bboxes, loc2bbox, center2corner, nms_bbox
+from vehicle_detection.bbox_helper import loc2bbox, center2corner, nms_bbox
 
 
 class Solver:
@@ -17,13 +17,14 @@ class Solver:
         self.train_loader = DataLoader(self.train_data_set, batch_size=self.batch_size, shuffle=True, num_workers=6)
         self.valid_loader = DataLoader(self.valid_data_set, batch_size=self.batch_size, shuffle=True, num_workers=6)
 
-    def evaluate_model(self, model, loss_criteria, loader=None):
+        self.mean_img = np.asarray((127, 127, 127), dtype=np.float32).reshape(3, 1, 1)
+        self.std_img = 128.0
+
+    def evaluate_model(self, model, loss_criteria, loader=None, with_plots=False, prior_bboxes=None):
         # Put the model in evaluation mode
         model.eval()
         class_losses = []
         bbox_losses = []
-        num_samples = 0
-        num_detected = 0
         if loader is None:
             loader = self.valid_loader
         with torch.no_grad():
@@ -38,17 +39,39 @@ class Solver:
 
                 # Compute the validation loss
                 conf_loss, loc_huber_loss = loss_criteria.forward(confidences, locs, gt_labels, gt_locs)
+                print(conf_loss , loc_huber_loss)
                 class_losses.append(conf_loss.item())
                 bbox_losses.append(loc_huber_loss.item())
 
-                # Find accuracy on classification
-                not_background = gt_labels != 0
-                _, predicted_class = confidences.max(2)
-                num_samples += len(gt_labels[not_background])
-                num_detected += (predicted_class[not_background] == gt_labels[not_background]).sum()
-            accuracy = num_detected.item() / float(num_samples) * 100
+            if with_plots:
+                NUM_IMGS = 2
+                fig, ax = plt.subplots(NUM_IMGS)
+                img_sample = x[:NUM_IMGS].clone()
+                loc_sample = locs[:NUM_IMGS, :, :].clone()
+                conf_sample = confidences[:NUM_IMGS, :, :].clone()
+                for i in range(1, NUM_IMGS + 1):
+                    img = np.asarray(img_sample[i - 1])
+                    img = (img * self.std_img) + self.mean_img
+                    img = np.ascontiguousarray(img.transpose(1, 2, 0).astype('uint8'))
+                    h, w, c = img.shape
+                    # Convert the locations to bbox
+                    bbox = loc2bbox(loc_sample[i - 1], prior_bboxes)
+                    # Convert bbox to corner format
+                    bbox = center2corner(bbox)
+                    bbox[:, [0, 2]] *= w
+                    bbox[:, [1, 3]] *= h
+                    # Apply nms on the bounding boxes
+                    sel_boxes = nms_bbox(bbox, conf_sample[i-1])
+                    # Draw bounding boxes on the image
+                    for (bbox, label) in sel_boxes:
+                        (x, y, xw, yh) = bbox
+                        rect = patches.Rectangle([x, y], xw - x, yh - y, linewidth=1, edgecolor='r',
+                                                 facecolor='none')
+                        ax[i - 1].add_patch(rect)
+                    ax[i - 1].imshow(img)
+                plt.show()
 
-            return accuracy, confidences, locs, class_losses, bbox_losses
+            return class_losses, bbox_losses
 
 
     def train(self, model, optimizer, loss_criteria, num_epochs=1, print_every=100):
@@ -74,8 +97,8 @@ class Solver:
                 # Compute the loss and save it.
                 conf_loss, loc_huber_loss = loss_criteria.forward(confidences, locs, gt_labels, gt_locs)
                 total_loss = conf_loss + loc_huber_loss
-                train_class_losses.append(conf_loss.item())
-                train_bbox_losses.append(loc_huber_loss.item())
+                train_class_losses.append(conf_loss)
+                train_bbox_losses.append(loc_huber_loss)
 
                 # Zero out the gradients before optimization
                 optimizer.zero_grad()
@@ -99,8 +122,7 @@ class Solver:
                     print("Validation: Accuracy = {}, total loss = {}, conf loss = {}, locs loss = {}".format(accuracy, valid_class_loss[-1]+valid_bbox_losses[-1],
                                                                                                               valid_class_loss[-1],
                                                                                                               valid_bbox_loss[-1]))
-
-            net_state = model.state_dict()
-            torch.save(net_state, 'vehicle_detection/ssd_net')
+                net_state = model.state_dict()
+                torch.save(net_state, 'vehicle_detection/ssd_net')
             print('--------')
         return train_class_losses, train_bbox_losses, valid_class_losses, valid_bbox_losses

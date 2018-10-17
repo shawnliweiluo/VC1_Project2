@@ -2,7 +2,6 @@ import numpy as np
 import json
 import os
 import random
-import torch
 
 class CityScapeDatalist():
     '''
@@ -29,7 +28,6 @@ class CityScapeDatalist():
 
     def prepare_data_list(self):
         self.data_list = []
-        counts = 0
         # Iterate through the directories and subdirectories to make the data list
         for cur_dir, sub_dirs, files in os.walk(self.base_img_dir):
             # Proceed once you have reached the leaf of the tree that is there
@@ -37,10 +35,6 @@ class CityScapeDatalist():
             if len(sub_dirs) != 0:
                 continue
             for img_file in files:
-                counts += 1
-                if counts % 1000 == 0:
-                    print("{} images processed".format(counts))
-
                 tokens = img_file.split('_')
                 # Ensure the image name has consistent format
                 assert len(tokens) == 4
@@ -60,21 +54,22 @@ class CityScapeDatalist():
                         if item['label'] in self.label_dict:
                             # save label
                             labels.append(self.label_dict[item['label']])
+                            # Find top left and bottom right coordinates
+                            top_left = np.min(item['polygon'], axis=0)
+                            bottom_right = np.max(item['polygon'], axis=0)
+                            # Concatenate the top left and bottom right to form a bounding box
+                            bbox = np.concatenate((top_left, bottom_right))
+                            # save bounding box
+                            bounding_boxes.append(bbox)
                         else:
                             labels.append(0)
-                        # Find top left and bottom right coordinates
-                        top_left = np.min(item['polygon'], axis=0)
-                        bottom_right = np.max(item['polygon'], axis=0)
-                        # Concatenate the top left and bottom right to form a bounding box
-                        bbox = np.concatenate((top_left, bottom_right))
-                        # save bounding box
-                        bounding_boxes.append(bbox)
+                            bounding_boxes.append(np.asarray([0, 0, 0, 0]))
 
                 # For each image add all the accepted labels and their corresponding bounding boxes.
                 self.data_list.append({"img_path": img_path, "labels": np.asarray(labels),
                                        'bounding_boxes':np.asarray(bounding_boxes, dtype=self.dtype)})
 
-    def split_data(self, train_portion=0.8, valid_portion=0.1):
+    def split_data(self, train_portion=0.8, valid_portion=0.2):
         random.shuffle(self.data_list)
         total_data_size = len(self.data_list)
 
@@ -82,5 +77,5 @@ class CityScapeDatalist():
         valid_data_size = int(valid_portion * total_data_size)
 
         self.train_list = self.data_list[:train_data_size]
-        self.valid_list = self.data_list[train_data_size: train_data_size + valid_data_size]
-        self.test_list = self.data_list[train_data_size + valid_data_size:]
+        self.valid_list = self.data_list[train_data_size: ]
+        # self.test_list = self.data_list[train_data_size + valid_data_size:]

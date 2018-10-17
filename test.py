@@ -1,41 +1,9 @@
-import numpy as np
 import torch.nn
-import json
-import os
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-
-from PIL import Image
-
 from vehicle_detection.ssd_net import *
 from vehicle_detection.bbox_loss import *
-
-from vehicle_detection.cityscape_datalist import *
 from vehicle_detection.cityscape_dataset import *
 from vehicle_detection.solver import *
-
-# Set default figure size
-plt.rcParams['figure.figsize'] = (30.0, 40.0)
-
-# Set image and label directory
-imgs_dir = "../cityscapes_dataset/cityscapes_samples"
-labels_dir = "../cityscapes_dataset/cityscapes_samples_labels"
-
-# Set accepted labels for this project
-label_dict = {
-    "person": 1,
-    "persongroup": 2,
-    "rider": 3,
-    "bicycle": 4,
-    "bicyclegroup": 5,
-    "car": 6,
-    "cargroup": 7,
-    "bus": 8,
-    "truck": 9,
-    "traffic sign": 10,
-    "traffic light": 11
-}
+from preprocess import label_dict
 
 improve_model = True
 
@@ -58,7 +26,7 @@ def main():
     ssd_net = SSD(num_classes).cuda()
 
     if improve_model:
-        net_state = torch.load('vehicle_detection/ssd_net')
+        net_state = torch.load('vehicle_detection/ssd_net', map_location='cuda')
         ssd_net.load_state_dict(net_state)
 
     # Create an optimizer
@@ -74,7 +42,7 @@ def main():
 
     # Training the model
     lr = 1e-3
-    for num_epochs in [15, 20, 20, 10, 5]:
+    for num_epochs in [30, 30]:
         optimizer.param_groups[0]['lr'] = lr
         tclass_loss, tbbox_loss, vclass_loss, vbbox_loss = solver.train(ssd_net,
                                                                         optimizer,

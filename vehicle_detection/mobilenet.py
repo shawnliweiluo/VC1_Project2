@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class MobileNet(nn.Module):
     def __init__(self, num_classes=1024):
         super(MobileNet, self).__init__()

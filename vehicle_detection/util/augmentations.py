@@ -44,13 +44,12 @@ def expansion(img, sample_bboxes, sample_labels, mean_img):
                           dtype=img.dtype)
     expand_img[:, :, :] = mean_img
     expand_img[int(y):int(y + h), int(x):int(x + w)] = img
-    img = expand_img
 
     sample_bboxes = sample_bboxes.copy()
     sample_bboxes[:, :2] += (int(x), int(y))
     sample_bboxes[:, 2:] += (int(x), int(y))
 
-    return img, sample_bboxes, sample_labels
+    return expand_img, sample_bboxes, sample_labels
 
 
 # This will randomly crop the input image
@@ -76,10 +75,11 @@ def random_crop(img, sample_bboxes, sample_labels, max_itr=50):
             crop_coord = np.asarray([x, y, x+w_crop, y+h_crop])
 
             # Check if the jaccard similarity meets minimum requirement
-            jaccard_sim = iou(sample_bboxes, crop_coord)
-            if jaccard_sim.min() < min_sim and jaccard_sim.max() > float('inf'):
+            pos_labels = sample_labels > 0
+            jaccard_sim = iou(sample_bboxes[pos_labels, :], crop_coord)
+            mask = jaccard_sim > min_sim
+            if not mask.any():
                 continue
-
             # Crop the image
             new_img = img[int(y):int(y+h_crop), int(x):int(x+w_crop), :]
 
@@ -91,18 +91,18 @@ def random_crop(img, sample_bboxes, sample_labels, max_itr=50):
             I1 = (centers[:, 0] > crop_coord[0]) & (centers[:, 0] < crop_coord[2])
             I2 = (centers[:, 1] > crop_coord[1]) & (centers[:, 1] < crop_coord[3])
             mask = I1 & I2
-            if mask.sum() == 0:
+            if not mask.any():
                 continue
-
-            new_sample_bboxes = sample_bboxes[mask, :].copy()
-            new_sample_labels = sample_labels[mask]
+            bboxes_masked = sample_bboxes[mask, :].copy()
+            labels_masked = sample_labels[mask]
 
             # Take the overlap as the new ground truth bounding box
-            new_sample_bboxes[:, :2] = np.maximum(new_sample_bboxes[:, :2], crop_coord[:2])
-            new_sample_bboxes[:, 2:] = np.minimum(new_sample_bboxes[:, 2:], crop_coord[2:])
+            bboxes_masked[:, :2] = np.maximum(bboxes_masked[:, :2], crop_coord[:2])
+            bboxes_masked[:, 2:] = np.minimum(bboxes_masked[:, 2:], crop_coord[2:])
 
             # Adjust the ground truth coordinates wrt to the cropped image
-            new_sample_bboxes[:, :2] -= crop_coord[:2]
-            new_sample_bboxes[:, 2:] -= crop_coord[:2]
+            bboxes_masked[:, :2] -= crop_coord[:2]
+            bboxes_masked[:, 2:] -= crop_coord[:2]
+            # print(min_sim)
 
-            return new_img, new_sample_bboxes, new_sample_labels
+            return new_img, bboxes_masked, labels_masked

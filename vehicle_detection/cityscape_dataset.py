@@ -1,4 +1,3 @@
-import numpy as np
 import torch.nn
 from torch.utils.data import Dataset
 from PIL import Image
@@ -9,8 +8,7 @@ from vehicle_detection.util.augmentations import *
 
 class CityScapeDataset(Dataset):
 
-    def __init__(self, dataset_list, input_dim=(300, 300), dtype=np.float32,
-                 mode='train'):
+    def __init__(self, dataset_list, input_dim=(300, 300), dtype=np.float32, mode='train'):
         self.dataset_list = dataset_list
         self.input_dim = input_dim
         self.dtype=dtype
@@ -28,10 +26,10 @@ class CityScapeDataset(Dataset):
         img = Image.fromarray(img.astype('uint8'))
         w, h = img.size
         img = img.resize(self.input_dim)
-        w_ratio = self.input_dim[0] / float(w)
-        h_ratio = self.input_dim[1] / float(h)
-        bbox[:, [0, 2]] *= w_ratio
-        bbox[:, [1, 3]] *= h_ratio
+        # w_ratio = self.input_dim[0] / float(w)
+        # h_ratio = self.input_dim[1] / float(h)
+        bbox[:, [0, 2]] /= w
+        bbox[:, [1, 3]] /= h
         return img, bbox
 
     def get_prior_bbox(self):
@@ -52,19 +50,17 @@ class CityScapeDataset(Dataset):
         img_path = self.dataset_list[idx]['img_path']
         img = np.asarray(Image.open(img_path), dtype=self.dtype)
         sample_bboxes = self.dataset_list[idx]['bounding_boxes']
-        # Take the labels for the image
         sample_labels = self.dataset_list[idx]['labels']
 
-        if self.mode == 'train':
+        # if self.mode == 'train':
             # Data Augmentation
             # First apply expansion.
-            img, sample_bboxes, sample_labels = expansion(img, sample_bboxes, sample_labels, mean_img=self.mean.reshape(1,1,3))
+            # img, sample_bboxes, sample_labels = expansion(img, sample_bboxes, sample_labels, mean_img=self.mean.reshape(1,1,3))
             # Second apply random cropping.
-            img, sample_bboxes, sample_labels = random_crop(img, sample_bboxes, sample_labels)
+            # img, sample_bboxes, sample_labels = random_crop(img, sample_bboxes, sample_labels)
             # TODO:: Alter the brightness randomly
 
-
-        # Resize the image and it's bounding boxes to a fixed size
+        # Resize the image and it's bounding boxes
         img, sample_bboxes = self.resize(img, sample_bboxes)
 
         # Convert image to array and move the channels to first dim
@@ -74,10 +70,11 @@ class CityScapeDataset(Dataset):
         img = (img - self.mean) / self.std
 
         # Normalize the bounding box position value from 0 to 1
-        sample_bboxes[:, [0,2]] /= self.input_dim[0]
-        sample_bboxes[:, [1,3]] /= self.input_dim[1]
+        # sample_bboxes[:, [0,2]] /= self.input_dim[0]
+        # sample_bboxes[:, [1,3]] /= self.input_dim[1]
 
         # Convert image, bbox and label to tensor
+        # torch.set_default_tensor_type('torch.cuda.FloatTensor')
         img = torch.from_numpy(img)
         sample_bboxes = torch.from_numpy(sample_bboxes)
         sample_labels = torch.from_numpy(sample_labels).long()

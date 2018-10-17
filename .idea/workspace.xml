@@ -3,10 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="92e4ddb2-6c92-4663-b41c-7dc3b2fdbab8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vehicle_detection.zip" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.npy" beforeDir="false" afterPath="$PROJECT_DIR$/test.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.npy" beforeDir="false" afterPath="$PROJECT_DIR$/train.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_bbox_losses.npy" beforeDir="false" afterPath="$PROJECT_DIR$/train_bbox_losses.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_class_losses.npy" beforeDir="false" afterPath="$PROJECT_DIR$/train_class_losses.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid.npy" beforeDir="false" afterPath="$PROJECT_DIR$/valid.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid_bbox_losses.npy" beforeDir="false" afterPath="$PROJECT_DIR$/valid_bbox_losses.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid_class_losses.npy" beforeDir="false" afterPath="$PROJECT_DIR$/valid_class_losses.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/bbox_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/bbox_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/mobilenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/mobilenet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/solver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle_detection/ssd_net" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/ssd_net" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vehicle_detection/ssd_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/ssd_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/util/augmentations.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/util/augmentations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle_detection/util/module_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle_detection/util/module_util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,34 +77,34 @@
     <session id="-1117645073">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.2" value="8" />
-          <entry key="project.open.time.3" value="10" />
+          <entry key="project.closed" value="18" />
+          <entry key="project.open.time.2" value="10" />
+          <entry key="project.open.time.3" value="13" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2121" />
+          <entry key="py" value="2694" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2121" />
+          <entry key="Python" value="2694" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ipynb" value="8" />
-          <entry key="py" value="23" />
+          <entry key="py" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="8" />
-          <entry key="Python" value="23" />
+          <entry key="Python" value="44" />
         </counts>
       </usages-collector>
     </session>
@@ -98,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle_detection/ssd_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="873">
+              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -110,20 +126,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="3023">
+              <caret line="178" selection-start-line="178" selection-end-line="178" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vehicle_detection/mobilenet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -131,8 +138,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vehicle_detection/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="119">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -141,34 +168,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_loss.py">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#1#16#0" expanded="true" />
+                <marker date="1539759014259" expanded="true" signature="256:257" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
+        <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/preprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -177,22 +193,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Object Detection.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
+        <entry file="file://$PROJECT_DIR$/plot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.py">
+        <entry file="file://$PROJECT_DIR$/preprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-              <folding>
-                <marker date="1539607870494" expanded="true" signature="896:897" ph="..." />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -209,10 +225,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vehicle</find>
-      <find>human</find>
-      <find>load_data</find>
-      <find>CityScapeDataset</find>
       <find>imshow</find>
       <find>asarra</find>
       <find>objects</find>
@@ -225,7 +237,6 @@
       <find>save_checkpoint</find>
       <find>device</find>
       <find>cpu</find>
-      <find>cuda</find>
       <find>num_work</find>
       <find>prior_bboxes</find>
       <find>Individual loss:</find>
@@ -233,11 +244,17 @@
       <find>input_size</find>
       <find>pretrained</find>
       <find>print</find>
-      <find>save</find>
       <find>i</find>
       <find>negative</find>
       <find>expansion</find>
       <find>hard_negative_mining</find>
+      <find>spawn</find>
+      <find>cuda</find>
+      <find>1e-6</find>
+      <find>1e</find>
+      <find>save</find>
+      <find>imgs_dir</find>
+      <find>labels_dir</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,20 +270,22 @@
         <option value="$PROJECT_DIR$/vehicle_detection.ipynb" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.36725/vehicle_detection.ipynb" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/vehicle_detection/util/module_util.py" />
-        <option value="$PROJECT_DIR$/vehicle_detection/bbox_loss.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa15852.13321/ssd_net.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/mobilenet.py" />
-        <option value="$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/preprocess.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/test.py" />
-        <option value="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" />
         <option value="$PROJECT_DIR$/Object Detection.ipynb" />
-        <option value="$PROJECT_DIR$/vehicle_detection/solver.py" />
-        <option value="$PROJECT_DIR$/vehicle_detection/ssd_net.py" />
         <option value="$PROJECT_DIR$/vehicle_detection/bbox_helper.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa8100.19731/bbox_loss.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/bbox_loss.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py" />
+        <option value="$PROJECT_DIR$/plot.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/util/module_util.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/solver.py" />
+        <option value="$PROJECT_DIR$/vehicle_detection/ssd_net.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/preprocess.py" />
       </list>
     </option>
   </component>
@@ -311,6 +330,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\VC1_Project2" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -339,6 +363,27 @@
       <option name="additionalOptions" value="" />
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="VC1_Project2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="preprocess (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -431,13 +476,15 @@
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test (1)" />
       <item itemvalue="Python.preprocess (1)" />
+      <item itemvalue="Python.plot" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.preprocess (1)" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.plot" />
         <item itemvalue="Python.preprocess" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -557,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539591044877</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Push">
+      <created>1539607905346</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1539607905346</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -609,14 +663,17 @@
     <MESSAGE value="Push" />
     <option name="LAST_COMMIT_MESSAGE" value="Push" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.ipynb" />
-    <entry file="file://$PROJECT_DIR$/util/module_util.py" />
-    <entry file="file://$PROJECT_DIR$/cityscape_datalist.py" />
-    <entry file="file://$PROJECT_DIR$/bbox_helper.py" />
-    <entry file="file://$PROJECT_DIR$/bbox_loss.py" />
-    <entry file="file://$PROJECT_DIR$/cityscape_dataset.py" />
-    <entry file="file://$PROJECT_DIR$/ssd_net.py" />
     <entry file="file://$PROJECT_DIR$/mobilenet.py" />
     <entry file="file://$PROJECT_DIR$/solver.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13420.15847/vehicle_detection.ipynb" />
@@ -669,29 +726,6 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa9180.28978/ssd_net.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10516.47000/ssd_net.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10516.9107/ssd_net.py" />
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/test.py" />
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/preprocess.py" />
-    <entry file="file://D:/Anaconda3/Lib/site-packages/h5py/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="66" column="70" selection-start-line="66" selection-start-column="70" selection-end-line="66" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa13320.2678/ssd_net.py" />
     <entry file="file://$PROJECT_DIR$/vehicle_detection/util/augmentations.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -700,60 +734,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10864.5590/bbox_loss.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10864.5590/bbox_loss.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8100.19731/bbox_loss.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa16448.32769/cityscape_dataset.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa16448.35868/solver.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa16448.44588/test.py" />
+    <entry file="file://D:/Anaconda3/Lib/site-packages/torch/nn/modules/module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="23" column="120" lean-forward="true" selection-start-line="23" selection-start-column="120" selection-end-line="23" selection-end-column="120" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8100.19731/bbox_loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="37" column="74" lean-forward="true" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/mobilenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/ssd_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="327">
+          <caret line="718" selection-start-line="718" selection-end-line="718" />
         </state>
       </provider>
     </entry>
@@ -764,30 +753,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="13" selection-start-line="13" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_loss.py">
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+        <state relative-caret-position="520">
+          <caret line="50" column="60" lean-forward="true" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/Lib/site-packages/torch/nn/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="974" selection-start-line="974" selection-end-line="974" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/mobilenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/Lib/site-packages/torch/serialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="355" selection-start-line="355" selection-end-line="355" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/Lib/site-packages/h5py/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/util/module_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vehicle_detection/bbox_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="3023">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/ssd_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -796,11 +856,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <marker date="1539607870494" expanded="true" signature="896:897" ph="..." />
+            <element signature="e#1#16#0" expanded="true" />
+            <marker date="1539759014259" expanded="true" signature="256:257" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vehicle_detection/cityscape_datalist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
