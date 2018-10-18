@@ -42,13 +42,13 @@ def main():
 
     # Training the model
     lr = 1e-3
-    for num_epochs in [30, 30]:
+    for num_epochs in [30, 30, 25, 20]:
         optimizer.param_groups[0]['lr'] = lr
         tclass_loss, tbbox_loss, vclass_loss, vbbox_loss = solver.train(ssd_net,
                                                                         optimizer,
                                                                         loss_function,
                                                                         num_epochs=num_epochs,
-                                                                        print_every=245)
+                                                                        print_every=230)
         train_class_losses += tclass_loss
         train_bbox_losses += tbbox_loss
         valid_class_losses += vclass_loss

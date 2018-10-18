@@ -35,7 +35,7 @@ def expansion(img, sample_bboxes, sample_labels, mean_img):
         return img, sample_bboxes, sample_labels
 
     h, w, c = img.shape
-    exp_ratio = np.random.uniform(1, 4)
+    exp_ratio = np.random.uniform(1, 2)
     x = np.random.uniform(0, w * exp_ratio - w)
     y = np.random.uniform(0, h * exp_ratio - h)
 
@@ -56,41 +56,44 @@ def expansion(img, sample_bboxes, sample_labels, mean_img):
 def random_crop(img, sample_bboxes, sample_labels, max_itr=50):
     while True:
         # Choose min jaccard similarity randomly
-        sim_thresholds = np.array([None, 0.1, 0.3, 0.5, 0.7, 0.9])
+        sim_thresholds = np.array([0.1, 0.3, 0.5, 0.7, 0.9])
         min_sim = np.random.choice(sim_thresholds)
-        if min_sim is None:
-            return img, sample_bboxes, sample_labels
+        # if min_sim is None:
+            # return img, sample_bboxes, sample_labels
 
         h, w, _ = img.shape
         for i in range(max_itr):
             # choose width and height for the crop
-            w_crop = np.random.uniform(0.3 * w, w)
-            h_crop = np.random.uniform(0.3 * h, h)
-            if (w_crop / h_crop < 0.5) or (w_crop / h_crop > 2):
-                continue
+            length = np.minimum(h, w)
+            crop_length = np.random.uniform(0.3 * length, length)
+            
+            # h_crop = np.random.uniform(0.3 * h, h)
+            # if (w_crop / h_crop < 0.5) or (w_crop / h_crop > 2):
+                # continue
 
             # Find the coordinates of the crop
-            x = np.random.uniform(w-w_crop)
-            y = np.random.uniform(h-h_crop)
-            crop_coord = np.asarray([x, y, x+w_crop, y+h_crop])
+            x = np.random.uniform(w-crop_length)
+            y = np.random.uniform(h-crop_length)
+            crop_coord = np.asarray([x, y, x+crop_length, y+crop_length])
 
             # Check if the jaccard similarity meets minimum requirement
-            pos_labels = sample_labels > 0
-            jaccard_sim = iou(sample_bboxes[pos_labels, :], crop_coord)
-            mask = jaccard_sim > min_sim
-            if not mask.any():
-                continue
+            # pos_labels = sample_labels > 0
+            # jaccard_sim = iou(sample_bboxes[pos_labels, :], crop_coord)
+            # mask = jaccard_sim.min() > min_sim
+            # if not mask.any():
+                # continue
             # Crop the image
-            new_img = img[int(y):int(y+h_crop), int(x):int(x+w_crop), :]
+            new_img = img[int(y):int(y+crop_length), int(x):int(x+crop_length), :]
 
             # Compute the center of the objects
-            centers = (sample_bboxes[:, :2] + sample_bboxes[:, 2:]) / 2
+            pos_labels = sample_labels > 0
+            centers = (sample_bboxes[:, :2] + sample_bboxes[:, 2:]) / 2.0
 
             # Take the ground truth bounding box if the center is in the
             # cropped image
             I1 = (centers[:, 0] > crop_coord[0]) & (centers[:, 0] < crop_coord[2])
             I2 = (centers[:, 1] > crop_coord[1]) & (centers[:, 1] < crop_coord[3])
-            mask = I1 & I2
+            mask = I1 * I2 * pos_labels
             if not mask.any():
                 continue
             bboxes_masked = sample_bboxes[mask, :].copy()

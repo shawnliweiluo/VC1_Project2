@@ -4,7 +4,6 @@ import shutil
 from torch.autograd import Variable
 from collections import OrderedDict
 
-
 def forward_from(module_seq, start_idx, end_index, input_x):
     """
     Forward the network from layer

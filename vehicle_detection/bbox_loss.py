@@ -28,7 +28,7 @@ def hard_negative_mining(predicted_prob, gt_label, neg_pos_ratio=3.0):
 
 class MultiboxLoss(nn.Module):
 
-    def __init__(self, iou_threshold=0.5, neg_pos_ratio=3.0):
+    def __init__(self, iou_threshold=0.5, neg_pos_ratio=1.0):
         super(MultiboxLoss, self).__init__()
         self.neg_pos_ratio = neg_pos_ratio
         self.neg_label_idx = 0

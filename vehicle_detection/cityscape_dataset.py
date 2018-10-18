@@ -53,12 +53,12 @@ class CityScapeDataset(Dataset):
         sample_labels = self.dataset_list[idx]['labels']
 
         # if self.mode == 'train':
-            # Data Augmentation
-            # First apply expansion.
-            # img, sample_bboxes, sample_labels = expansion(img, sample_bboxes, sample_labels, mean_img=self.mean.reshape(1,1,3))
-            # Second apply random cropping.
-            # img, sample_bboxes, sample_labels = random_crop(img, sample_bboxes, sample_labels)
-            # TODO:: Alter the brightness randomly
+        # Data Augmentation
+        # First apply expansion.
+        # img, sample_bboxes, sample_labels = expansion(img, sample_bboxes, sample_labels, mean_img=self.mean.reshape(1,1,3))
+        # Second apply random cropping.
+        img, sample_bboxes, sample_labels = random_crop(img, sample_bboxes, sample_labels)
+        # TODO:: Alter the brightness randomly
 
         # Resize the image and it's bounding boxes
         img, sample_bboxes = self.resize(img, sample_bboxes)
@@ -69,9 +69,6 @@ class CityScapeDataset(Dataset):
         # Normalize the image with self.mean and self.std
         img = (img - self.mean) / self.std
 
-        # Normalize the bounding box position value from 0 to 1
-        # sample_bboxes[:, [0,2]] /= self.input_dim[0]
-        # sample_bboxes[:, [1,3]] /= self.input_dim[1]
 
         # Convert image, bbox and label to tensor
         # torch.set_default_tensor_type('torch.cuda.FloatTensor')

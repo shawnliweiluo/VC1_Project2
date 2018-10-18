@@ -57,9 +57,11 @@ class SSD(nn.Module):
             )
         ])
 
-        self.fpn = nn.ModuleList([
-            nn.ConvTranspose2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=1, stride=2)
-        ])
+        # self.fpn = nn.ModuleList([
+            # nn.ConvTranspose2d(in_channels=1024, out_channels=1024, kernel_size=3, padding=1, stride=2),
+            # nn.BatchNorm2d(1024),
+            # nn.ReLU()
+        # ])
 
         # Bounding box offset regressor
         num_prior_bbox = 6                                                               # num of prior bounding boxes
@@ -73,9 +75,9 @@ class SSD(nn.Module):
             nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
         ])
 
-        self.fpn_loc_regressor = nn.ModuleList([
-            nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
-        ])
+        # self.fpn_loc_regressor = nn.ModuleList([
+            # nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * 4, kernel_size=3, padding=1),
+        # ])
 
         # Bounding box classification confidence for each label
         self.classifier = nn.ModuleList([
@@ -88,9 +90,9 @@ class SSD(nn.Module):
             nn.Conv2d(in_channels=256, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
         ])
 
-        self.fpn_classifier = nn.ModuleList([
-            nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
-        ])
+        # self.fpn_classifier = nn.ModuleList([
+            # nn.Conv2d(in_channels=1024, out_channels=num_prior_bbox * num_classes, kernel_size=3, padding=1),
+        # ])
 
         # Todo: load the pre-trained model for self.base_net, it will increase the accuracy by fine-tuning
         basenet_state = torch.load('vehicle_detection/pretrained/mobienetv2.pth')
@@ -152,10 +154,10 @@ class SSD(nn.Module):
         confidence_list.append(confidence)
         loc_list.append(loc)
 
-        z = self.fpn[0](y)
-        confidence, loc = self.feature_to_bbbox(self.fpn_loc_regressor[0], self.fpn_classifier[0], z)
-        confidence_list.append(confidence)
-        loc_list.append(loc)
+        # z = self.fpn[0](y)
+        # confidence, loc = self.feature_to_bbbox(self.fpn_loc_regressor[0], self.fpn_classifier[0], z)
+        # confidence_list.append(confidence)
+        # loc_list.append(loc)
 
 
         # Todo: forward the 'y' to additional layers for extracting coarse features
@@ -180,3 +182,6 @@ class SSD(nn.Module):
             confidences = F.softmax(confidences, dim=2)
         return confidences, locations
 
+
+# To check out the summary of input output dims.
+# summary_layers(net, input_size=(3, 300, 300))

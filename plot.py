@@ -5,6 +5,9 @@ from vehicle_detection.cityscape_dataset import *
 from vehicle_detection.solver import *
 from vehicle_detection.bbox_helper import *
 
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
 
 def main():
     # Model

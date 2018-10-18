@@ -3,6 +3,7 @@ import json
 import os
 import random
 
+
 class CityScapeDatalist():
     '''
     This creates a data list that will be fed to the Dataset class.
@@ -50,24 +51,32 @@ class CityScapeDatalist():
                 labels = []
                 bounding_boxes = []
                 with open(labels_path, 'r') as data:
+                    background_list_label = []
+                    background_list_bbox = []
+                    positive_list_label = []
+                    positive_list_bbox = []
                     for item in json.load(data)['objects']:
                         if item['label'] in self.label_dict:
                             # save label
-                            labels.append(self.label_dict[item['label']])
+                            positive_list_label.append(self.label_dict[item['label']])
                             # Find top left and bottom right coordinates
                             top_left = np.min(item['polygon'], axis=0)
                             bottom_right = np.max(item['polygon'], axis=0)
                             # Concatenate the top left and bottom right to form a bounding box
                             bbox = np.concatenate((top_left, bottom_right))
                             # save bounding box
-                            bounding_boxes.append(bbox)
+                            positive_list_bbox.append(bbox)
                         else:
-                            labels.append(0)
-                            bounding_boxes.append(np.asarray([0, 0, 0, 0]))
-
-                # For each image add all the accepted labels and their corresponding bounding boxes.
-                self.data_list.append({"img_path": img_path, "labels": np.asarray(labels),
-                                       'bounding_boxes':np.asarray(bounding_boxes, dtype=self.dtype)})
+                            background_list_label.append(0)
+                            background_list_bbox.append(np.asarray([0, 0, 0, 0]))
+                    if len(positive_list_label) != 0:
+                        labels += positive_list_label
+                        labels += background_list_label
+                        bounding_boxes += positive_list_bbox
+                        bounding_boxes += background_list_bbox
+                        # For each image add all the accepted labels and their corresponding bounding boxes.
+                        self.data_list.append({"img_path": img_path, "labels": np.asarray(labels),
+                                               'bounding_boxes':np.asarray(bounding_boxes, dtype=self.dtype)})
 
     def split_data(self, train_portion=0.8, valid_portion=0.2):
         random.shuffle(self.data_list)
